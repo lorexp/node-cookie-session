@@ -1,7 +1,7 @@
 import express from 'express';
 import cookieSession from 'cookie-session';
 import dotenv from 'dotenv';
-import router from './routes/index.js';
+import router from './routes/index';
 
 dotenv.config();
 
