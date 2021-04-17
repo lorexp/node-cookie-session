@@ -7,6 +7,13 @@ router.get('/:name', async (req, res) => {
   return res.send(`Hello ${name}`);
 });
 
-router.get('/check/name', async (req, res) => res.send(req.session.name));
+router.get('/session/name', async (req, res) =>
+  res.send(req.session.name || 'No name in session'),
+);
+
+router.get('/session/destroy', async (req, res) => {
+  req.session = null;
+  return res.sendStatus(200);
+});
 
 export default router;
