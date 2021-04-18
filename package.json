@@ -5,8 +5,13 @@
   "main": "src/index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon --es-module-specifier-resolution=node src/index.js"
+    "dev": "nodemon --es-module-specifier-resolution=node src/index.js",
+    "lint-staged": "lint-staged"
   },
+  "lint-staged": {
+    "*.js": "eslint"
+  },
+  "pre-commit": "lint-staged",
   "devDependencies": {
     "eslint": "^7.24.0",
     "eslint-config-airbnb": "18.2.1",
